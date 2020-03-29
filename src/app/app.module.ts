@@ -1,22 +1,40 @@
-import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
 
-import {HttpClientModule} from '@angular/common/http';
-import {FormsModule} from '@angular/forms';
-import {MainComponent} from './components/main/main.component';
-import {HeaderComponent} from './header/header.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { MainComponent } from './components/main/main.component';
+import { HeaderComponent } from './components/header/header.component';
+import { TrainingComponent } from './components/training/training.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { AppRoutingModule } from './app-routing.module';
+import { RouterModule } from '@angular/router';
+import { ButtonPanelComponent } from './components/button-panel/button-panel.component';
+import { ButtonComponent } from './components/button/button.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatProgressBarModule } from '@angular/material';
+import { ChallengeComponent } from './components/challenge/challenge.component';
+import { TranslationComponent } from './components/translation/translation.component';
+import { AlertComponent } from './components/alert/alert.component';
+import { LetterComponent } from './components/letter/letter.component';
 
 @NgModule({
   // another modules that should be imported
   imports: [
     BrowserModule,
     HttpClientModule,
-    FormsModule
-  ],
+    FormsModule,
+    AppRoutingModule,
+    RouterModule,
+    BrowserAnimationsModule,
+    MatProgressBarModule],
   // components belong to this module
-  declarations: [MainComponent, HeaderComponent],
+  declarations: [MainComponent, HeaderComponent,
+    TrainingComponent, NotFoundComponent, ButtonPanelComponent, ButtonComponent,
+    ChallengeComponent, TranslationComponent, AlertComponent, LetterComponent],
   // bootstrapping (automatically load) components when this module is loaded
-  bootstrap: [MainComponent]
+  bootstrap: [MainComponent],
+  providers: []
 })
 
 export class AppModule {
