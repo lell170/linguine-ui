@@ -1,5 +1,5 @@
 
-import {Alert, AlertType} from '../model/alert';
+import {Alert, AlertType} from '../../../../fw-neuharlingersiel-ui/src/app/model/alert';
 
 // alerts factory (static method pattern)
 export class AlertsFactory {

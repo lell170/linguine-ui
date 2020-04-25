@@ -12,7 +12,6 @@ import { RouterModule } from '@angular/router';
 import { ButtonPanelComponent } from './components/button-panel/button-panel.component';
 import { ButtonComponent } from './components/button/button.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatProgressBarModule } from '@angular/material';
 import { ChallengeComponent } from './components/challenge/challenge.component';
 import { TranslationComponent } from './components/translation/translation.component';
 import { AlertComponent } from './components/alert/alert.component';
@@ -27,8 +26,7 @@ import { ResultViewComponent } from './components/result-view/result-view.compon
     FormsModule,
     AppRoutingModule,
     RouterModule,
-    BrowserAnimationsModule,
-    MatProgressBarModule],
+    BrowserAnimationsModule],
   // components belong to this module
   declarations: [MainComponent, HeaderComponent,
     TrainingComponent, NotFoundComponent, ButtonPanelComponent, ButtonComponent,

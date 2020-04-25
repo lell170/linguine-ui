@@ -1,6 +1,6 @@
-import {Component, QueryList, ViewChild} from '@angular/core';
-import {AlertService} from '../../service/alert-service.service';
-import {AlertComponent} from '../alert/alert.component';
+import { Component, ViewChild } from '@angular/core';
+import { AlertService } from '../../service/alert-service.service';
+import { AlertComponent } from '../alert/alert.component';
 
 @Component({
   selector: 'app-main',

@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Alert} from '../model/alert';
+import {Alert} from '../../../../fw-neuharlingersiel-ui/src/app/model/alert';
 import {Subject} from 'rxjs';
 import {AlertsFactory} from '../factory/alertsFactory';
 

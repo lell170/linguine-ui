@@ -1,6 +1,20 @@
-# Linguine-UI
+### It's my first Angular project :tada:
+Based on this project I learn Angular, TypeScript, JavaScript and other modern UI technologies
+ 
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/1200px-Angular_full_color_logo.svg.png" width="60px" height="60px"/><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/2000px-Unofficial_JavaScript_logo_2.svg.png" width="55px" height="55px"/>  ![tslogo](https://github.com/lell170/linguine-ui/blob/master/images/ts_logo.png)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.15.
+
+----------
+
+This project was created to train foreign words received through REST API from the [Linguine-Backend Project](https://github.com/lell170/linguine-backend)
+
+![Linguine](https://github.com/lell170/linguine-ui/blob/master/images/Peek_2020-04-25.gif)
+
+
+# Linguine-UI
+(default angular readme):
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.0.
 
 ## Development server
 

@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Observable, Subject} from 'rxjs';
-import {HttpClient, HttpResponse} from '@angular/common/http';
+import {HttpResponse} from '@angular/common/http';
 import {Vocabulary} from '../model/vocabulary';
 import {Character} from '../model/character';
 import {RestClientService} from './rest-client.service';
@@ -28,8 +28,7 @@ export class ChallengeService {
   }
 
   checkResultCells(characters: Character[]) {
-    const s = characters.map(item => item.content).join('');
-    this.result.next(s);
+    this.result.next(characters.map(item => item.content).join(''));
   }
 
   ignore(challenge: Challenge) {
