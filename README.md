@@ -1,4 +1,4 @@
-### It's my first angular project :tada:
+### It's my first Angular project :tada:
 Based on this project I learn Angular, TypeScript, JavaScript and other modern UI technologies
  
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/1200px-Angular_full_color_logo.svg.png" width="60px" height="60px"/>
@@ -8,7 +8,7 @@ Based on this project I learn Angular, TypeScript, JavaScript and other modern U
 
 ----------
 
-This project was created to train foreign words received through the rest api from the linguine-backend project that you also can find under my github repositories
+This project was created to train foreign words received through the rest api from the [Linguine-Backend Project](https://github.com/lell170/linguine-backend)
 ![LINGUINE](https://github.com/lell170/linguine-ui/images/Peek_2020-04-25.gif)
 
 # Linguine-UI
