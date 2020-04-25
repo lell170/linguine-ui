@@ -1,22 +1,26 @@
-import {Component, QueryList, ViewChildren} from '@angular/core';
+import {Component, QueryList, ViewChild} from '@angular/core';
 import {AlertService} from '../../service/alert-service.service';
 import {AlertComponent} from '../alert/alert.component';
 
 @Component({
   selector: 'app-main',
-  templateUrl: './main.component.html',
-  styleUrls: ['./main.component.css']
+  template: `
+    <app-header></app-header>
+    <router-outlet></router-outlet>
+    <app-alert #alert></app-alert>
+  `,
+  styleUrls: []
 })
 
 export class MainComponent {
 
-  @ViewChildren(AlertComponent) alert: QueryList<AlertComponent>;
+  @ViewChild('alert') alert: AlertComponent;
 
   constructor(private alertService: AlertService) {
     this.alertService.subject.subscribe(alert => {
-      this.alert.first.content = alert.content;
-      this.alert.first.show = alert.visible;
-      this.alert.first.cssClass = alert.type;
+      this.alert.content = alert.content;
+      this.alert.show = alert.visible;
+      this.alert.cssClass = alert.type;
     });
   };
 

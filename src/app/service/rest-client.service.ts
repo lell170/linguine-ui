@@ -1,29 +1,38 @@
-import {Injectable, OnInit} from '@angular/core';
-import {Subject, throwError} from 'rxjs';
-import {Alert} from '../model/alert';
-import {HttpErrorResponse} from '@angular/common/http';
-import {AlertsFactory} from '../factory/AlertsFactory';
+import {Injectable} from '@angular/core';
+import {Observable, throwError} from 'rxjs';
+import {HttpClient, HttpErrorResponse, HttpResponse} from '@angular/common/http';
+import {AlertsFactory} from '../factory/alertsFactory';
 import {AlertService} from './alert-service.service';
+import {catchError} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RestClientService {
 
-  constructor(private alertService: AlertService) {
+  constructor(private alertService: AlertService, private httpClient: HttpClient) {
   }
 
-  public handleError(error: HttpErrorResponse) {
-    if (error.error instanceof ErrorEvent) {
-      // A client-side or network error occurred. Handle it accordingly.
-      const errorMessage = 'An error occurred: ' + error.error.message;
-      this.createAlertObject(errorMessage);
-    } else {
-      // The backend returned an unsuccessful response code.
-      const errorMessage = 'Backend returned code ' + error.status + ', body was: ' + error.error;
-      this.createAlertObject(errorMessage);
-    }
-    // return an observable
+  httpGet(url: string, options: {}): Observable<HttpResponse<any>> {
+    const observable = this.httpClient.get<any>(url, options).pipe(
+      catchError(err => {
+        return this.handleError(err);
+      }));
+    this.alertService.hideAlert();
+    return observable;
+  }
+
+  httpPost(url: string, obj: any, options: {}): Observable<Object> {
+    const observable = this.httpClient.post(url, obj, options).pipe(
+      catchError(err => {
+        return this.handleError(err);
+      }));
+    this.alertService.hideAlert();
+    return observable;
+  }
+
+  private handleError(error: HttpErrorResponse) {
+    this.createAlertObject(error.message);
     return throwError(error);
   }
 

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "accent-ui": {
+    "linguine-ui": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,12 +13,12 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/accent-ui",
+            "outputPath": "dist/linguine-ui",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "aot": false,
+            "aot": true,
             "assets": [
               "src/favicon.ico",
               "src/assets"
@@ -45,7 +45,6 @@
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -67,18 +66,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "accent-ui:build"
+            "browserTarget": "linguine-ui:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "accent-ui:build:production"
+              "browserTarget": "linguine-ui:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "accent-ui:build"
+            "browserTarget": "linguine-ui:build"
           }
         },
         "test": {
@@ -115,16 +114,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "accent-ui:serve"
+            "devServerTarget": "linguine-ui:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "accent-ui:serve:production"
+              "devServerTarget": "linguine-ui:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "accent-ui"
+  "defaultProject": "linguine-ui"
 }

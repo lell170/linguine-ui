@@ -16,7 +16,8 @@ import { MatProgressBarModule } from '@angular/material';
 import { ChallengeComponent } from './components/challenge/challenge.component';
 import { TranslationComponent } from './components/translation/translation.component';
 import { AlertComponent } from './components/alert/alert.component';
-import { LetterComponent } from './components/letter/letter.component';
+import { CharacterComponent } from './components/character/character.component';
+import { ResultViewComponent } from './components/result-view/result-view.component';
 
 @NgModule({
   // another modules that should be imported
@@ -31,7 +32,7 @@ import { LetterComponent } from './components/letter/letter.component';
   // components belong to this module
   declarations: [MainComponent, HeaderComponent,
     TrainingComponent, NotFoundComponent, ButtonPanelComponent, ButtonComponent,
-    ChallengeComponent, TranslationComponent, AlertComponent, LetterComponent],
+    ChallengeComponent, TranslationComponent, AlertComponent, CharacterComponent, ResultViewComponent],
   // bootstrapping (automatically load) components when this module is loaded
   bootstrap: [MainComponent],
   providers: []

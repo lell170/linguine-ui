@@ -1,8 +1,7 @@
-import { EventEmitter, Injectable, Output } from '@angular/core';
-import { Alert } from "../model/alert";
+import {Injectable} from '@angular/core';
+import {Alert} from '../model/alert';
 import {Subject} from 'rxjs';
-import {FactoryGenerator} from '@angular/compiler-cli/src/ngtsc/shims';
-import {AlertsFactory} from '../factory/AlertsFactory';
+import {AlertsFactory} from '../factory/alertsFactory';
 
 @Injectable({
   providedIn: 'root'

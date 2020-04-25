@@ -7,8 +7,13 @@ import {ChallengeService} from '../../service/challenge.service';
 
 @Component({
   selector: 'app-training',
-  templateUrl: 'training.component.html',
-  styleUrls: ['./training.component.css']
+  template: `
+    <div style="padding-top: 10px">
+      <app-translation *ngIf="vocabulary" [vocabulary]="vocabulary"></app-translation>
+      <app-button-panel [buttons]="buttons"></app-button-panel>
+    </div>
+  `,
+  styleUrls: []
 })
 
 @Injectable()
@@ -17,44 +22,31 @@ export class TrainingComponent implements OnInit {
   buttons: Button[];
   vocabulary: Vocabulary;
 
-  // TODO: (very) ugly constructor :-(
-  constructor(private vocabularyService: VocabularyService, private challengeService: ChallengeService, private alertService: AlertService) {
+  constructor(private vocabularyService: VocabularyService, private challengeService: ChallengeService) {
 
+    //TODO subscribe blocks are empty
     const addToChallenge = new Button('Add to challenge', () => {
-      this.challengeService.addToChallenge(this.vocabulary).subscribe(response => {
-        if (response.ok) {
-          console.log('vocabulary will be added to challenge');
-          this.alertService.hideAlert();
-          this.showNextRandomValue();
-        }
-      });
+      this.challengeService.addToChallenge(this.vocabulary).subscribe();
+      this.showNextRandomValue();
     });
     addToChallenge.className = 'btn-warning';
 
-    const dropButton = new Button('Drop (show never again)', () => {
-      this.vocabularyService.dropVocabulary(this.vocabulary).subscribe(response => {
-        if (response.ok) {
-          console.log('vocabulary is dropped');
-          this.showNextRandomValue();
-          this.alertService.hideAlert();
-        }
-      });
+    const ignoreButton = new Button('Ignore', () => {
+      this.vocabularyService.ignore(this.vocabulary).subscribe();
+      this.showNextRandomValue();
     });
-    dropButton.className = 'btn-danger';
+    ignoreButton.className = 'btn-danger';
 
     const skipButton = new Button('Skip', () => {
       this.showNextRandomValue();
     });
     skipButton.className = 'btn-secondary';
 
-    this.buttons = [addToChallenge, dropButton, skipButton];
+    this.buttons = [addToChallenge, ignoreButton, skipButton];
   }
 
   private showNextRandomValue() {
     this.vocabularyService.getRandomVocabulary().subscribe(response => {
-      if (response.ok) {
-        this.alertService.hideAlert();
-      }
       this.vocabulary = response.body;
     });
   }

@@ -1,10 +1,16 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-alert',
-  templateUrl: './alert.component.html',
-  styleUrls: ['./alert.component.css']
+  template: `
+    <div class="m-2">
+      <div [className]="cssClass" [innerHTML]="content" role="alert" *ngIf="show">
+      </div>
+    </div>
+  `,
+  styleUrls: []
 })
+
 export class AlertComponent {
 
   content: string;

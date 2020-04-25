@@ -4,7 +4,7 @@ import { Vocabulary } from '../../model/vocabulary';
 @Component({
   selector: 'app-translation',
   templateUrl: './translation.component.html',
-  styleUrls: ['./translation.component.css']
+  styleUrls: []
 })
 export class TranslationComponent implements OnInit {
 

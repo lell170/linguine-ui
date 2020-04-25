@@ -1,27 +1,38 @@
 import {Injectable} from '@angular/core';
-import {Observable} from 'rxjs';
+import {Observable, Subject} from 'rxjs';
 import {HttpClient, HttpResponse} from '@angular/common/http';
 import {Vocabulary} from '../model/vocabulary';
+import {Character} from '../model/character';
+import {RestClientService} from './rest-client.service';
 import {Challenge} from '../model/challenge';
-
-const BASE_URL = 'http://localhost/api/challenge/';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ChallengeService {
 
-  constructor(private httpClient: HttpClient) {
+  private static BASE_URL: string = 'http://localhost/api/challenge/';
+
+  result: Subject<string>;
+
+  constructor(private restClientService: RestClientService) {
+    this.result = new Subject<string>();
   }
 
-  getRandomChallenge(): Observable<HttpResponse<Challenge>> {
-    return this.httpClient.get<Challenge>(BASE_URL + 'random', {observe: 'response'});
+  getRandomChallenge(): Observable<HttpResponse<any>> {
+    return this.restClientService.httpGet(ChallengeService.BASE_URL + 'random', {observe: 'response'});
   }
 
-  addToChallenge(vocabulary: Vocabulary): Observable<HttpResponse<any>> {
-    console.log(vocabulary.en);
-    console.log(vocabulary.id);
-    console.log(vocabulary);
-    return this.httpClient.post(BASE_URL + 'add', vocabulary, {observe: 'response'});
+  addToChallenge(vocabulary: Vocabulary): Observable<Object> {
+    return this.restClientService.httpPost(ChallengeService.BASE_URL + 'add', vocabulary, {});
+  }
+
+  checkResultCells(characters: Character[]) {
+    const s = characters.map(item => item.content).join('');
+    this.result.next(s);
+  }
+
+  ignore(challenge: Challenge) {
+    return this.restClientService.httpPost(ChallengeService.BASE_URL + 'ignore', challenge, {});
   }
 }
