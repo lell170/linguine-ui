@@ -1,13 +1,12 @@
 ### It's my first Angular project :tada:
 Based on this project I learn Angular, TypeScript, JavaScript and other modern UI technologies
  
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/1200px-Angular_full_color_logo.svg.png" width="60px" height="60px"/><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/2000px-Unofficial_JavaScript_logo_2.svg.png" width="55px" height="55px"/>![tslogo](https://github.com/lell170/linguine-ui/blob/master/images/ts_logo.png)
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/1200px-Angular_full_color_logo.svg.png" width="60px" height="60px"/><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/2000px-Unofficial_JavaScript_logo_2.svg.png" width="55px" height="55px"/>  ![tslogo](https://github.com/lell170/linguine-ui/blob/master/images/ts_logo.png)
 
 
 ----------
 
-This project was created to train foreign words received through the rest api from the [Linguine-Backend Project](https://github.com/lell170/linguine-backend)
-![LINGUINE](https://github.com/lell170/linguine-ui/images/Peek_2020-04-25.gif)
+This project was created to train foreign words received through the rest api from the [Linguine-Backend Project](https://github.com/lell170/linguine-ui/blob/master/images/Peek_2020-04-25.gif)
 
 # Linguine-UI
 (default angular readme):
