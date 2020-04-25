@@ -6,7 +6,10 @@ Based on this project I learn Angular, TypeScript, JavaScript and other modern U
 
 ----------
 
-This project was created to train foreign words received through the rest api from the [Linguine-Backend Project](https://github.com/lell170/linguine-ui/blob/master/images/Peek_2020-04-25.gif)
+This project was created to train foreign words received through REST API from the [Linguine-Backend Project](https://github.com/lell170/linguine-backend)
+
+![Linguine](https://github.com/lell170/linguine-ui/blob/master/images/Peek_2020-04-25.gif)
+
 
 # Linguine-UI
 (default angular readme):
