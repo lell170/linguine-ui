@@ -1,16 +1,12 @@
-import {AfterViewInit, Component, OnInit, QueryList, ViewChild, ViewChildren} from '@angular/core';
+import {Component, OnInit, QueryList, ViewChild, ViewChildren} from '@angular/core';
 import {ChallengeService} from '../../service/challenge.service';
 import {CharacterComponent} from '../character/character.component';
 import {Character} from '../../model/character';
 import {CharacterFactory} from '../../factory/characterFactory';
-import {FactoryGenerator} from '@angular/compiler-cli/src/ngtsc/shims';
 import {CharacterService} from '../../service/character.service';
-import {Subject} from 'rxjs';
-import {Vocabulary} from '../../model/vocabulary';
 import {Challenge} from '../../model/challenge';
 import {Button} from '../../model/button';
 import {ResultViewComponent} from '../result-view/result-view.component';
-import {Statistics} from '../../model/statistics';
 import {StatisticsService} from '../../service/statistics.service';
 
 @Component({
@@ -47,13 +43,7 @@ import {StatisticsService} from '../../service/statistics.service';
         </div>
       </div>
       <div class="col-3 mt-2">
-        <div class="alert alert-dark" role="alert">
-          <p class="alert-heading">Statistics</p>
-          <hr>
-          <p class="mb-0">Words: {{statistics?.wordsCount}}</p>
-          <p class="mb-0">Active Challenges: {{statistics?.activeChallengesCount}}</p>
-          <p class="mb-0">Solved: {{statistics?.solvedCount}}</p>
-        </div>
+        <app-statistics></app-statistics>
       </div>
     </div>
     <app-result-view #resultView></app-result-view>
@@ -64,7 +54,6 @@ import {StatisticsService} from '../../service/statistics.service';
 export class ChallengeComponent implements OnInit {
 
   challenge: Challenge;
-  statistics: Statistics;
 
   resultChars: Character[] = [];
   selectionChars: Character[] = [];
@@ -114,11 +103,7 @@ export class ChallengeComponent implements OnInit {
       this.createCharacters();
     });
     // load currentStatistics
-    this.loadStatistics();
-  }
-
-  private loadStatistics() {
-    this.statisticsService.getCurrentStatistics().subscribe(value => this.statistics = value.body);
+    // this.statisticsService.getCurrentStatistics();
   }
 
   private initializeButtons() {
