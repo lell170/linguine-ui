@@ -17,6 +17,7 @@ import { TranslationComponent } from './components/translation/translation.compo
 import { AlertComponent } from './components/alert/alert.component';
 import { CharacterComponent } from './components/character/character.component';
 import { ResultViewComponent } from './components/result-view/result-view.component';
+import { StatisticsComponent } from './components/statistics/statistics.component';
 
 @NgModule({
   // another modules that should be imported
@@ -30,7 +31,7 @@ import { ResultViewComponent } from './components/result-view/result-view.compon
   // components belong to this module
   declarations: [MainComponent, HeaderComponent,
     TrainingComponent, NotFoundComponent, ButtonPanelComponent, ButtonComponent,
-    ChallengeComponent, TranslationComponent, AlertComponent, CharacterComponent, ResultViewComponent],
+    ChallengeComponent, TranslationComponent, AlertComponent, CharacterComponent, ResultViewComponent, StatisticsComponent],
   // bootstrapping (automatically load) components when this module is loaded
   bootstrap: [MainComponent],
   providers: []
